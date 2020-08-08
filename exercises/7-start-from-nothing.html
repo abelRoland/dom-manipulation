@@ -44,6 +44,42 @@
       <script id='DOM manipulation script'>
         debugger;
         'use strict';
+        const divEl = document.getElementById('actual');
+        
+        const headerEl = document.createElement('h2');
+        headerEl.innerText = 'a list of things';
+
+        divEl.appendChild(headerEl);
+
+        const ulEl = document.createElement('ul');
+        ulEl.start = '0';
+
+        divEl.appendChild(ulEl);
+
+        const ulFUll = document.getElementById('actual').children[1];
+        const liFirst = document.createElement('li');
+        liFirst.innerText = 'robots';
+
+        ulFUll.appendChild(liFirst);
+
+        const liSecond = document.createElement('li');
+        liSecond.innerText = 'solar systems';
+
+        ulFUll.appendChild(liSecond);
+
+        const liThird = document.createElement('li');
+        const aEl = document.createElement('a');
+        aEl.innerText = 'learn about badgers';
+        aEl.href = 'https://www.badgerbadgerbadger.com';
+        aEl.expected = '_blank';
+
+        liThird.appendChild(aEl);
+        ulFUll.appendChild(liThird);
+
+        const lifourth = document.createElement('li');
+        lifourth.innerText = 'oil';
+
+        ulFUll.appendChild(lifourth);
 
         // write me! (... without using cloneNode, that's kind of cheating)
       </script>

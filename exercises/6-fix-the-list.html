@@ -49,6 +49,29 @@
         debugger;
         'use strict';
 
+        const divEl = document.getElementById('actual');
+        const headerEl = document.createElement('h1');
+        headerEl.innerText = 'a list of things';
+        
+        divEl.insertBefore(headerEl, divEl.childNodes[0]);
+
+        divEl.children[1].children[1].innerText = 'solar systems';
+
+        const olEL = divEl.children[1];
+        const extraLink = olEL.children[2];
+        olEL.removeChild(extraLink);
+
+        const orderedList = document.createElement('ul');
+
+        const numChildren = olEL.children.length;
+        for (let i = 0; i < numChildren; i++) {
+          const nextChild = olEL.children[i].cloneNode(true);
+          orderedList.appendChild(nextChild);
+        }
+
+        actual.replaceChild(orderedList, olEL);
+        // https://stackoverflow.com/questions/17094230/how-do-i-loop-through-children-objects-in-javascript
+        
         // write me! (... without using cloneNode, that's kind of cheating)
       </script>
 
